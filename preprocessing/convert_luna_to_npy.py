@@ -129,14 +129,16 @@ if __name__=="__main__":
     from matplotlib.patches import Circle
 
     coord = True
-    exclude_flag = True
+    exclude_flag = True # what is this # TODO
+    exclude_flag = False # what is this # TODO
 
     dst_spacing = OUTPUT_SPACING
     #src_root = '/lunit/data/LUNA16/rawdata'
-    dst_root = '/data2/jhkim/npydata'
-
-    src_root = '/data/jhkim/LUNA16/original'
-
+    #dst_root = '/data2/jhkim/npydata'
+    dst_root ='../data/npydata' # destination folder where numpy data should go
+    #src_root = '/data/jhkim/LUNA16/original'
+    src_root = '../data/'
+    print("src root: ", src_root)
 
     if not os.path.exists(dst_root):
         os.makedirs(dst_root)
