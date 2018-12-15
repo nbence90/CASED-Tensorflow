@@ -1,0 +1,3 @@
+/media/bence/Elements/Databases/LUNA16/projects/CASED-Tensorflow/preprocessing   master  virtualenv envchest--python=/usr/bin/python3.6
+
+
