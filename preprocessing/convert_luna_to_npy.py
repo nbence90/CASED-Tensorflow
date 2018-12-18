@@ -135,9 +135,9 @@ if __name__=="__main__":
     dst_spacing = OUTPUT_SPACING
     #src_root = '/lunit/data/LUNA16/rawdata'
     #dst_root = '/data2/jhkim/npydata'
-    dst_root ='../data/npydata' # destination folder where numpy data should go
+    dst_root ='../data2/npydata' # destination folder where numpy data should go
     #src_root = '/data/jhkim/LUNA16/original'
-    src_root = '../data/'
+    src_root = '../data/original'
     print("src root: ", src_root)
 
     if not os.path.exists(dst_root):

@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../')
 import glob
 import os
 from random import randint
@@ -15,7 +17,7 @@ stride = 8
 
 move = (patch_size // 2) // stride  # 4
 #annotations = pd.read_csv('/data/jhkim/LUNA16/CSVFILES/annotations.csv')  # save dict format may be..
-annotations = pd.read_csv('./data/CSVFILES/annotations.csv')  # save dict format may be..
+annotations = pd.read_csv('../data/original/CSVFILES/annotations.csv')  # save dict format may be..
 
 def indices_to_one_hot(data, nb_classes):
     """Convert an iterable of indices to one-hot encoded labels."""
@@ -168,8 +170,8 @@ def process_image(image_path, annotations, nodule, non_nodule, nodule_label, non
     subset_name = image_path.split('/')[-2]
     #SH_path = '/data2/jhkim/npydata/' + subset_name + '/' + image_name + '.npy'
     #label_name = '/data2/jhkim/npydata/' + subset_name + '/' + image_name + '.label.npy'
-    SH_path = '/data/npydata/' + subset_name + '/' + image_name + '.npy'
-    label_name = '/data/npydata/' + subset_name + '/' + image_name + '.label.npy'
+    SH_path = '/data2/npydata/' + subset_name + '/' + image_name + '.npy'
+    label_name = '/data2/npydata/' + subset_name + '/' + image_name + '.label.npy'
 
 
     # calculate resize factor

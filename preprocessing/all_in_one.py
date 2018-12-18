@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../')
 from preprocessing.preprocess_utils import *
 from random import randint
 import h5py
@@ -16,11 +18,13 @@ if __name__=="__main__":
     coord = False
 
     dst_spacing = OUTPUT_SPACING
-    src_root = '/data/jhkim/LUNA16/original'
+    #src_root = '/data/jhkim/LUNA16/original'
     #dst_root = '/lunit/data/LUNA16/npydata'
+    src_root = '../data/original/'
+    dst_root = '../data/npydata/'
 
-    save_path = '/data2/jhkim/LUNA16/patch/SH/'
-
+    #save_path = '/data2/jhkim/LUNA16/patch/SH/'
+    save_path = '../data2/patch/SH/'
     # if not os.path.exists(dst_root):
     #     os.makedirs(dst_root)
 
