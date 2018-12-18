@@ -14,8 +14,8 @@ label_size = 8
 stride = 8
 
 move = (patch_size // 2) // stride  # 4
-annotations = pd.read_csv('/data/jhkim/LUNA16/CSVFILES/annotations.csv')  # save dict format may be..
-
+#annotations = pd.read_csv('/data/jhkim/LUNA16/CSVFILES/annotations.csv')  # save dict format may be..
+annotations = pd.read_csv('./data/CSVFILES/annotations.csv')  # save dict format may be..
 
 def indices_to_one_hot(data, nb_classes):
     """Convert an iterable of indices to one-hot encoded labels."""
@@ -166,8 +166,11 @@ def process_image(image_path, annotations, nodule, non_nodule, nodule_label, non
     image_name = os.path.split(image_path)[1].replace('.mhd', '')
 
     subset_name = image_path.split('/')[-2]
-    SH_path = '/data2/jhkim/npydata/' + subset_name + '/' + image_name + '.npy'
-    label_name = '/data2/jhkim/npydata/' + subset_name + '/' + image_name + '.label.npy'
+    #SH_path = '/data2/jhkim/npydata/' + subset_name + '/' + image_name + '.npy'
+    #label_name = '/data2/jhkim/npydata/' + subset_name + '/' + image_name + '.label.npy'
+    SH_path = '/data/npydata/' + subset_name + '/' + image_name + '.npy'
+    label_name = '/data/npydata/' + subset_name + '/' + image_name + '.label.npy'
+
 
     # calculate resize factor
     resize_factor = spacing / OUTPUT_SPACING
@@ -237,7 +240,8 @@ def process_image(image_path, annotations, nodule, non_nodule, nodule_label, non
 
 
 for i in range(10):
-    image_paths = glob.glob("/data/jhkim/LUNA16/original/subset" + str(i) + '/*.mhd')
+    #image_paths = glob.glob("/data/jhkim/LUNA16/original/subset" + str(i) + '/*.mhd')
+    image_paths = glob.glob("/data/subset" + str(i) + '/*.mhd')
     nodule = []
     non_nodule = []
     nodule_label = []
@@ -245,8 +249,9 @@ for i in range(10):
 
     idx = 1
     flag = 1
-    save_path = '/data2/jhkim/LUNA16/patch/SH/'
-    
+    #save_path = '/data2/jhkim/LUNA16/patch/SH/'
+    save_path = '/data/patch/SH/'    
+
     for image_path in image_paths:
         print('subset' + str(i) + ' / ' + str(idx) + ' / ' + str(len(image_paths)))
         process_image(image_path, annotations, nodule, non_nodule, nodule_label, non_nodule_label)
